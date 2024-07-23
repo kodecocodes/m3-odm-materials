@@ -18,6 +18,8 @@ pip list
 
 conda deactivate
 
+conda deactivate
+
 pip list
 
 conda activate coremltools
