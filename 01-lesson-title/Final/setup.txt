@@ -1,4 +1,4 @@
-conda create --name coremltools-env
+conda create --name coremltools python=3.11
 
 conda activate coremltools
 
@@ -7,8 +7,6 @@ conda env list
 conda deactivate
 
 conda activate coremltools
-
-conda install pip
 
 pip list
 
