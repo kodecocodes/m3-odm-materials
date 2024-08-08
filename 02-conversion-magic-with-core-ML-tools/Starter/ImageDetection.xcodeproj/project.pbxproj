@@ -72,7 +72,7 @@
 				A96E16ED2C595B4D00319FDE /* ImageDisplayView.swift */,
 				A96E16EF2C595D9F00319FDE /* NoImageSelectedView.swift */,
 				A9362FF52C5AA785008F64AC /* ObjectOverlayView.swift */,
-				A9D7DCF22C6198FF002CFB7F /* Models */,
+				9BC061422C64FE67000008E6 /* Models */,
 				18D775C622AD944400AE281E /* Assets.xcassets */,
 				18D775DA22AD963800AE281E /* LaunchScreen.storyboard */,
 				18D775CE22AD944400AE281E /* Info.plist */,
@@ -89,6 +89,13 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		9BC061422C64FE67000008E6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		A9362FF42C5AA76B008F64AC /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -96,13 +103,6 @@
 				A9362FEF2C5AA710008F64AC /* DetectedObject.swift */,
 			);
 			path = Classes;
-			sourceTree = "<group>";
-		};
-		A9D7DCF22C6198FF002CFB7F /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
