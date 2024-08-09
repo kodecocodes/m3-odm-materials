@@ -287,3 +287,9 @@ DerivedData/
 
 ## Gcc Patch
 /*.gcno
+
+## Large model files
+yolov8m-oiv7.mlpackage
+yolov8n-oiv7.mlpackage
+yolov8x-oiv7-int.mlpackage
+yolov8x-oiv7.mlpackage

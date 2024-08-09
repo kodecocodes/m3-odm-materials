@@ -32,13 +32,98 @@
 
 import SwiftUI
 import PhotosUI
+import Vision
 
 struct ContentView: View {
   @State private var selectedImage: PhotosPickerItem?
   @State private var image: Image?
   @State private var cgImage: CGImage?
+  @State private var detectedObjects: [DetectedObject] = []
+  @State private var startTime: DispatchTime?
+  @State private var endTime: DispatchTime?
+  @State private var currentModel: SelectedModel = .yolo8xfull
+
+  enum SelectedModel {
+    case yolo8xfull
+    case yolo8int8
+    case yolo8m
+    case yolo8n
+  }
+
+  func runModel() {
+    guard let cgImage = cgImage else {
+        print("Unable to load photo.")
+        return
+    }
+
+    var model: MLModel?
+    switch currentModel {
+    case .yolo8xfull:
+      model = try? yolov8x_oiv7(configuration: .init()).model
+    case .yolo8int8:
+      model = try? yolov8x_oiv7_int(configuration: .init()).model
+    case .yolo8m:
+      model = try? yolov8m_oiv7(configuration: .init()).model
+    case .yolo8n:
+      model = try? yolov8n_oiv7(configuration: .init()).model
+    }
+
+    guard let model = model,
+          let detector = try? VNCoreMLModel(for: model) else {
+      print("Unable to load model.")
+      return
+    }
+
+    // 1
+    let visionRequest = VNCoreMLRequest(model: detector) { request, error in
+      self.endTime = DispatchTime.now()
+      detectedObjects = []
+      if let error = error {
+        print(error.localizedDescription)
+        return
+      }
+      // 2
+      if let results = request.results as? [VNRecognizedObjectObservation] {
+        // 1
+        if results.isEmpty {
+          print("No results found.")
+        }
+        // 2
+        for result in results {
+          if let firstIdentifier = result.labels.first {
+            let object = DetectedObject(
+              label: firstIdentifier.identifier,
+              confidence: firstIdentifier.confidence,
+              boundingBox: result.boundingBox
+            )
+            detectedObjects.append(object)
+          }
+        }
+      }
+    }
+
+    // 1
+    visionRequest.imageCropAndScaleOption = .scaleFill
+    // 2
+    let handler = VNImageRequestHandler(cgImage: cgImage, orientation: .up)
+    // 3
+    do {
+      startTime = DispatchTime.now()
+      endTime = nil
+      try handler.perform([visionRequest])
+    } catch {
+      print(error)
+    }
+  }
+
 
   var body: some View {
+    Picker("Select Model to Use", selection: $currentModel) {
+      Text("yolov8x-oiv7").tag(SelectedModel.yolo8xfull)
+      Text("yolov8x-oiv7-int").tag(SelectedModel.yolo8int8)
+      Text("yolov8m-oiv7").tag(SelectedModel.yolo8m)
+      Text("yolov8n-oiv7").tag(SelectedModel.yolo8n)
+    }
     PhotosPicker("Select Photo", selection: $selectedImage, matching: .images)
       .onChange(of: selectedImage) {
         Task {
@@ -50,10 +135,29 @@ struct ContentView: View {
           }
         }
       }
+      .onChange(of: cgImage) {
+        runModel()
+      }
+      .onChange(of: currentModel) {
+        runModel()
+      }
     if let image = image {
       ImageDisplayView(image: image)
+        .overlay {
+          ForEach(detectedObjects, id: \.self) { ident in
+            `ObjectOverlayView`(object: ident)
+          }
+        }
     } else {
       NoImageSelectedView()
+    }
+    if let start = startTime, let end = endTime {
+      let elapsedNanoseconds = end.uptimeNanoseconds - start.uptimeNanoseconds
+      let seconds = Double(elapsedNanoseconds) * 1e-9
+      Text("Last Request took \(seconds) seconds")
+    }
+    ForEach(detectedObjects, id: \.self) { obj in
+      Text(obj.label) + Text(" (") + Text(obj.confidence, format: .percent) + Text(")")
     }
   }
 }

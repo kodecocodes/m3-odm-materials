@@ -15,6 +15,10 @@
 		A9362FEE2C5AA6AB008F64AC /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9362FED2C5AA6AB008F64AC /* Helpers.swift */; };
 		A9362FF02C5AA710008F64AC /* DetectedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9362FEF2C5AA710008F64AC /* DetectedObject.swift */; };
 		A9362FF62C5AA785008F64AC /* ObjectOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9362FF52C5AA785008F64AC /* ObjectOverlayView.swift */; };
+		A94D54CC2C66C5090026F251 /* yolov8x-oiv7-int.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = A94D54CB2C66C5090026F251 /* yolov8x-oiv7-int.mlpackage */; };
+		A94D54CE2C66C51E0026F251 /* yolov8x-oiv7.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = A94D54CD2C66C51E0026F251 /* yolov8x-oiv7.mlpackage */; };
+		A94D54D12C66C5FA0026F251 /* yolov8m-oiv7.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = A94D54CF2C66C5FA0026F251 /* yolov8m-oiv7.mlpackage */; };
+		A94D54D22C66C5FA0026F251 /* yolov8n-oiv7.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = A94D54D02C66C5FA0026F251 /* yolov8n-oiv7.mlpackage */; };
 		A96E16EE2C595B4D00319FDE /* ImageDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96E16ED2C595B4D00319FDE /* ImageDisplayView.swift */; };
 		A96E16F02C595D9F00319FDE /* NoImageSelectedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96E16EF2C595D9F00319FDE /* NoImageSelectedView.swift */; };
 /* End PBXBuildFile section */
@@ -30,6 +34,10 @@
 		A9362FED2C5AA6AB008F64AC /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		A9362FEF2C5AA710008F64AC /* DetectedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectedObject.swift; sourceTree = "<group>"; };
 		A9362FF52C5AA785008F64AC /* ObjectOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectOverlayView.swift; sourceTree = "<group>"; };
+		A94D54CB2C66C5090026F251 /* yolov8x-oiv7-int.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = "yolov8x-oiv7-int.mlpackage"; sourceTree = "<group>"; };
+		A94D54CD2C66C51E0026F251 /* yolov8x-oiv7.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = "yolov8x-oiv7.mlpackage"; sourceTree = "<group>"; };
+		A94D54CF2C66C5FA0026F251 /* yolov8m-oiv7.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = "yolov8m-oiv7.mlpackage"; sourceTree = "<group>"; };
+		A94D54D02C66C5FA0026F251 /* yolov8n-oiv7.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = "yolov8n-oiv7.mlpackage"; sourceTree = "<group>"; };
 		A96E16ED2C595B4D00319FDE /* ImageDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDisplayView.swift; sourceTree = "<group>"; };
 		A96E16EF2C595D9F00319FDE /* NoImageSelectedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoImageSelectedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,6 +109,10 @@
 		A9D7DCF22C6198FF002CFB7F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A94D54CB2C66C5090026F251 /* yolov8x-oiv7-int.mlpackage */,
+				A94D54CD2C66C51E0026F251 /* yolov8x-oiv7.mlpackage */,
+				A94D54CF2C66C5FA0026F251 /* yolov8m-oiv7.mlpackage */,
+				A94D54D02C66C5FA0026F251 /* yolov8n-oiv7.mlpackage */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -200,13 +212,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A94D54CC2C66C5090026F251 /* yolov8x-oiv7-int.mlpackage in Sources */,
 				A96E16F02C595D9F00319FDE /* NoImageSelectedView.swift in Sources */,
+				A94D54CE2C66C51E0026F251 /* yolov8x-oiv7.mlpackage in Sources */,
 				A96E16EE2C595B4D00319FDE /* ImageDisplayView.swift in Sources */,
 				18D775C522AD944300AE281E /* ContentView.swift in Sources */,
 				A9362FF62C5AA785008F64AC /* ObjectOverlayView.swift in Sources */,
 				A9362FEE2C5AA6AB008F64AC /* Helpers.swift in Sources */,
 				A9362FF02C5AA710008F64AC /* DetectedObject.swift in Sources */,
 				1839F4B025190F2A00BB00F1 /* AppMain.swift in Sources */,
+				A94D54D12C66C5FA0026F251 /* yolov8m-oiv7.mlpackage in Sources */,
+				A94D54D22C66C5FA0026F251 /* yolov8n-oiv7.mlpackage in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
