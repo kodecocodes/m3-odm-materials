@@ -34,6 +34,13 @@ import SwiftUI
 import PhotosUI
 import Vision
 
+enum SelectedModel {
+  case yolo8xfull
+  case yolo8int8
+  case yolo8m
+  case yolo8n
+}
+
 struct ContentView: View {
   @State private var selectedImage: PhotosPickerItem?
   @State private var image: Image?
@@ -42,13 +49,6 @@ struct ContentView: View {
   @State private var startTime: DispatchTime?
   @State private var endTime: DispatchTime?
   @State private var currentModel: SelectedModel = .yolo8xfull
-
-  enum SelectedModel {
-    case yolo8xfull
-    case yolo8int8
-    case yolo8m
-    case yolo8n
-  }
 
   func runModel() {
     guard let cgImage = cgImage else {
@@ -87,14 +87,21 @@ struct ContentView: View {
         // 1
         if results.isEmpty {
           print("No results found.")
+          return
         }
         // 2
         for result in results {
+          // 3
           if let firstIdentifier = result.labels.first {
+            let confidence = firstIdentifier.confidence
+            let label = firstIdentifier.identifier
+            // 4
+            let boundingBox = result.boundingBox
+            // 5
             let object = DetectedObject(
-              label: firstIdentifier.identifier,
-              confidence: firstIdentifier.confidence,
-              boundingBox: result.boundingBox
+              label: label,
+              confidence: confidence,
+              boundingBox: boundingBox
             )
             detectedObjects.append(object)
           }
@@ -115,7 +122,6 @@ struct ContentView: View {
       print(error)
     }
   }
-
 
   var body: some View {
     Picker("Select Model to Use", selection: $currentModel) {
@@ -154,7 +160,7 @@ struct ContentView: View {
     if let start = startTime, let end = endTime {
       let elapsedNanoseconds = end.uptimeNanoseconds - start.uptimeNanoseconds
       let seconds = Double(elapsedNanoseconds) * 1e-9
-      Text("Last Request took \(seconds) seconds")
+      Text("Last Request took \(seconds.roundTwo) seconds")
     }
     ForEach(detectedObjects, id: \.self) { obj in
       Text(obj.label) + Text(" (") + Text(obj.confidence, format: .percent) + Text(")")

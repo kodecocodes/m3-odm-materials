@@ -38,6 +38,12 @@ extension CGFloat {
   }
 }
 
+extension Double {
+  var roundTwo: String {
+    return String(format: "%.2f", self)
+  }
+}
+
 extension CGRect {
   func asString() -> String {
     return "origin: (\(self.origin.x.roundTwo), \(self.origin.y.roundTwo))" +
