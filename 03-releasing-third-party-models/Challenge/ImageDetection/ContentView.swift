@@ -79,6 +79,7 @@ struct ContentView: View {
     let visionRequest = VNCoreMLRequest(model: detector) { request, error in
       self.endTime = DispatchTime.now()
       detectedObjects = []
+      selectedObject = nil
       if let error = error {
         print(error.localizedDescription)
         return
