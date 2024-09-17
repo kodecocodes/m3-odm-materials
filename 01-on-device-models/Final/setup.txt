@@ -1,0 +1,28 @@
+conda create --name coremltools python=3.11
+
+conda activate coremltools
+
+conda env list
+
+conda deactivate
+
+conda activate coremltools
+
+pip list
+
+conda activate base
+
+pip list
+
+conda deactivate
+
+conda deactivate
+
+pip list
+
+conda activate coremltools
+
+pip install -U coremltools
+
+conda install pytorch torchvision -c pytorch
+
