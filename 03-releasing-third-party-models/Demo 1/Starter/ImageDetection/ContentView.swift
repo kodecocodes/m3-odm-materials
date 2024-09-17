@@ -32,12 +32,49 @@
 
 import SwiftUI
 import PhotosUI
+import Vision
 
 struct ContentView: View {
   @State private var selectedImage: PhotosPickerItem?
   @State private var image: Image?
   @State private var cgImage: CGImage?
 
+  func runModel() {
+    guard
+      // 1
+      let cgImage = cgImage,
+      // 2
+      // NOTE: you will need to import the model files in Lesson 3, Instruction 1 for this project to compile. We aren't included 
+      let model = try? yolov8x_oiv7(configuration: .init()).model,
+      // 3
+      let detector = try? VNCoreMLModel(for: model) else {
+        // 4
+        print("Unable to load photo.")
+        return
+    }
+    // 1
+    let visionRequest = VNCoreMLRequest(model: detector) { request, error in
+      if let error = error {
+        print(error.localizedDescription)
+        return
+      }
+      // 2
+      if let results = request.results as? [VNRecognizedObjectObservation] {
+        // Insert result processing code here
+      }
+    }
+    // 1
+    visionRequest.imageCropAndScaleOption = .scaleFill
+    // 2
+    let handler = VNImageRequestHandler(cgImage: cgImage, orientation: .up)
+    // 3
+    do {
+      try handler.perform([visionRequest])
+    } catch {
+      print(error)
+    }
+  }
+  
   var body: some View {
     PhotosPicker("Select Photo", selection: $selectedImage, matching: .images)
       .onChange(of: selectedImage) {

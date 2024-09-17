@@ -17,10 +17,6 @@
 		A9362FF62C5AA785008F64AC /* ObjectOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9362FF52C5AA785008F64AC /* ObjectOverlayView.swift */; };
 		A96E16EE2C595B4D00319FDE /* ImageDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96E16ED2C595B4D00319FDE /* ImageDisplayView.swift */; };
 		A96E16F02C595D9F00319FDE /* NoImageSelectedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96E16EF2C595D9F00319FDE /* NoImageSelectedView.swift */; };
-		A9BC31D62C691738007A2C40 /* yolov8x-oiv7-int.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = A9BC31D52C691738007A2C40 /* yolov8x-oiv7-int.mlpackage */; };
-		A9BC31D72C691738007A2C40 /* yolov8m-oiv7.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = A9BC31D22C691738007A2C40 /* yolov8m-oiv7.mlpackage */; };
-		A9BC31D82C691738007A2C40 /* yolov8n-oiv7.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = A9BC31D32C691738007A2C40 /* yolov8n-oiv7.mlpackage */; };
-		A9BC31D92C691738007A2C40 /* yolov8x-oiv7.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = A9BC31D42C691738007A2C40 /* yolov8x-oiv7.mlpackage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,10 +32,6 @@
 		A9362FF52C5AA785008F64AC /* ObjectOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectOverlayView.swift; sourceTree = "<group>"; };
 		A96E16ED2C595B4D00319FDE /* ImageDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDisplayView.swift; sourceTree = "<group>"; };
 		A96E16EF2C595D9F00319FDE /* NoImageSelectedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoImageSelectedView.swift; sourceTree = "<group>"; };
-		A9BC31D22C691738007A2C40 /* yolov8m-oiv7.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = "yolov8m-oiv7.mlpackage"; sourceTree = "<group>"; };
-		A9BC31D32C691738007A2C40 /* yolov8n-oiv7.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = "yolov8n-oiv7.mlpackage"; sourceTree = "<group>"; };
-		A9BC31D42C691738007A2C40 /* yolov8x-oiv7.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = "yolov8x-oiv7.mlpackage"; sourceTree = "<group>"; };
-		A9BC31D52C691738007A2C40 /* yolov8x-oiv7-int.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = "yolov8x-oiv7-int.mlpackage"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,10 +101,6 @@
 		A9D7DCF22C6198FF002CFB7F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A9BC31D22C691738007A2C40 /* yolov8m-oiv7.mlpackage */,
-				A9BC31D32C691738007A2C40 /* yolov8n-oiv7.mlpackage */,
-				A9BC31D42C691738007A2C40 /* yolov8x-oiv7.mlpackage */,
-				A9BC31D52C691738007A2C40 /* yolov8x-oiv7-int.mlpackage */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -219,10 +207,6 @@
 				A9362FEE2C5AA6AB008F64AC /* Helpers.swift in Sources */,
 				A9362FF02C5AA710008F64AC /* DetectedObject.swift in Sources */,
 				1839F4B025190F2A00BB00F1 /* AppMain.swift in Sources */,
-				A9BC31D62C691738007A2C40 /* yolov8x-oiv7-int.mlpackage in Sources */,
-				A9BC31D72C691738007A2C40 /* yolov8m-oiv7.mlpackage in Sources */,
-				A9BC31D82C691738007A2C40 /* yolov8n-oiv7.mlpackage in Sources */,
-				A9BC31D92C691738007A2C40 /* yolov8x-oiv7.mlpackage in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
