@@ -17,8 +17,8 @@
 		A9362FF62C5AA785008F64AC /* ObjectOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9362FF52C5AA785008F64AC /* ObjectOverlayView.swift */; };
 		A96E16EE2C595B4D00319FDE /* ImageDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96E16ED2C595B4D00319FDE /* ImageDisplayView.swift */; };
 		A96E16F02C595D9F00319FDE /* NoImageSelectedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96E16EF2C595D9F00319FDE /* NoImageSelectedView.swift */; };
-		A9D7DCF02C6198A9002CFB7F /* yolov8x-oiv7.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = A9D7DCEF2C6198A9002CFB7F /* yolov8x-oiv7.mlpackage */; };
-		A9D7DCF12C6198A9002CFB7F /* resnet101.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = A9D7DCEE2C6198A9002CFB7F /* resnet101.mlpackage */; };
+		AEB308442E809BCA009F87E4 /* yolov8x-oiv7.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = AEB308432E809BCA009F87E4 /* yolov8x-oiv7.mlpackage */; };
+		AEB308462E809CAB009F87E4 /* resnet101.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = AEB308452E809CAB009F87E4 /* resnet101.mlpackage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,8 +34,8 @@
 		A9362FF52C5AA785008F64AC /* ObjectOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectOverlayView.swift; sourceTree = "<group>"; };
 		A96E16ED2C595B4D00319FDE /* ImageDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDisplayView.swift; sourceTree = "<group>"; };
 		A96E16EF2C595D9F00319FDE /* NoImageSelectedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoImageSelectedView.swift; sourceTree = "<group>"; };
-		A9D7DCEE2C6198A9002CFB7F /* resnet101.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = resnet101.mlpackage; sourceTree = "<group>"; };
-		A9D7DCEF2C6198A9002CFB7F /* yolov8x-oiv7.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = "yolov8x-oiv7.mlpackage"; sourceTree = "<group>"; };
+		AEB308432E809BCA009F87E4 /* yolov8x-oiv7.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = "yolov8x-oiv7.mlpackage"; sourceTree = "<group>"; };
+		AEB308452E809CAB009F87E4 /* resnet101.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = resnet101.mlpackage; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +105,8 @@
 		A9D7DCED2C61989F002CFB7F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A9D7DCEE2C6198A9002CFB7F /* resnet101.mlpackage */,
-				A9D7DCEF2C6198A9002CFB7F /* yolov8x-oiv7.mlpackage */,
+				AEB308432E809BCA009F87E4 /* yolov8x-oiv7.mlpackage */,
+				AEB308452E809CAB009F87E4 /* resnet101.mlpackage */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -206,13 +206,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEB308442E809BCA009F87E4 /* yolov8x-oiv7.mlpackage in Sources */,
+				AEB308462E809CAB009F87E4 /* resnet101.mlpackage in Sources */,
 				A96E16F02C595D9F00319FDE /* NoImageSelectedView.swift in Sources */,
 				A96E16EE2C595B4D00319FDE /* ImageDisplayView.swift in Sources */,
 				18D775C522AD944300AE281E /* ContentView.swift in Sources */,
 				A9362FF62C5AA785008F64AC /* ObjectOverlayView.swift in Sources */,
 				A9362FEE2C5AA6AB008F64AC /* Helpers.swift in Sources */,
-				A9D7DCF02C6198A9002CFB7F /* yolov8x-oiv7.mlpackage in Sources */,
-				A9D7DCF12C6198A9002CFB7F /* resnet101.mlpackage in Sources */,
 				A9362FF02C5AA710008F64AC /* DetectedObject.swift in Sources */,
 				1839F4B025190F2A00BB00F1 /* AppMain.swift in Sources */,
 			);
@@ -356,11 +356,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "ImageDetection/Preview\\ Content";
-				DEVELOPMENT_TEAM = V89E766N8T;
+				DEVELOPMENT_TEAM = 8CC4L69ZKX;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = ImageDetection/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -378,11 +378,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "ImageDetection/Preview\\ Content";
-				DEVELOPMENT_TEAM = V89E766N8T;
+				DEVELOPMENT_TEAM = 8CC4L69ZKX;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = ImageDetection/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
